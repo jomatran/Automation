@@ -14,6 +14,5 @@ if __name__ == "__main__":
         for entry in entries:
             name = entry.name
             if check_file_type(name, IMAGE_EXTENSIONS):
-                logging.info(f"Deleting file {name}")
-                delete_file(entry.path)
+                delete_file(entry)
                 sleep(1)
