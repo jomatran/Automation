@@ -1,0 +1,21 @@
+Move by category
+  - Image
+    - Date
+  - Code
+    - py
+    - yaml
+    - json
+    - sh
+    - blabla
+  - ms
+    - txt
+    - exel
+    - Catchup
+
+input:
+  filename with extension
+output:
+    if file_name start with catchup:
+      file_name = file_name+date+ file_extension
+  destination path + file_name.file_extension
+
