@@ -1,19 +1,13 @@
 """
 Handling to move file
 """
-
 import logging
-
 from os import rename
 from os.path import exists
-
 from pathlib import Path
-from watchdog.events import FileSystemEventHandler
 from src.design_patterns.factory.category_factory import CategoryFactory
 from src.utils.common_functions import list_all_entry_from_path
-
-
-class FileHandler(FileSystemEventHandler):
+class FileHandler:
 
     def __init__(self, source: str) -> None:
         self.__source = source
@@ -24,7 +18,6 @@ class FileHandler(FileSystemEventHandler):
         """
         all_files = list_all_entry_from_path(source_dir=self.__source)
         for file in all_files:
-            # logging.debug("Check %s exist", file)
             file_exist = exists(file)
             if file_exist:
                 ct = CategoryFactory.type_factory(source_file=file)

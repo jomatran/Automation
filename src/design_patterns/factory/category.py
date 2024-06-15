@@ -15,9 +15,11 @@ class ICategory(metaclass=ABCMeta):
     def get_path(self, source_file: str) -> str:
         """
         Get destination base on kile extension
-        Args:
-            source_file (str): source file
-        Returns:
+        :param source_file:
+            file name
+        :type source_file:
+            ``str``
+        :return:
             Destination path for file
         """
 
@@ -25,8 +27,10 @@ class ICategory(metaclass=ABCMeta):
     def modified_file_name(self, source_file: str) -> str:
         """
         Changing file name based on type if need it
-        Args:
-            source_file (str): file name string
-        Returns:
+        :param source_file:
+            file name
+        :type source_file:
+            ``str``
+        :return:
             File name that was modified
         """

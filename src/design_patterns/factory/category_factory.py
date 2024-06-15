@@ -15,6 +15,7 @@ from src.utils.constant import (
     PY_EXTENSIONS,
     SH_EXTENSIONS,
     MS_EXTENSION,
+    JSON_EXTENSIONS,
 )
 
 
@@ -22,7 +23,11 @@ class CategoryFactory:
     @staticmethod
     def type_factory(source_file: str) -> ICategory:
         """
-        A factory method that will return an object
+        A factory method that will return an object that will handle
+        :param source_file:
+            file name
+        :type source_file:
+            ``str``
         """
         result = DefaultHandler()
         file_name = get_file_name_from_path(source_file=source_file)
@@ -33,11 +38,12 @@ class CategoryFactory:
             is_expect_type(file_name=file_name, regex=PY_EXTENSIONS)
             or is_expect_type(file_name=file_name, regex=SH_EXTENSIONS)
             or is_expect_type(file_name=file_name, regex=YAML_EXTENSIONS)
+            or is_expect_type(file_name=file_name, regex=JSON_EXTENSIONS)
             or file_name.lower().startswith("docker")
         ):
             logging.debug("Get code handling")
             result = Code()
         if is_expect_type(file_name=file_name, regex=MS_EXTENSION):
-            logging.debug("Get microsoft handling")
+            logging.info("Get microsoft handling")
             result = Microsoft()
         return result

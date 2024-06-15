@@ -17,7 +17,7 @@ PY_EXTENSIONS = ".(?:py)"
 SH_EXTENSIONS = ".(?:sh)"
 JSON_EXTENSIONS = ".(?:json)"
 IGNORE_FILE = [".DS_Store"]
-MS_EXTENSION = ".(?:doc|docx|pptx|xlxs|txt)"
+MS_EXTENSION = ".(?:doc|docx|pptx|xlsx|txt)"
 
 # Seperate regex
 FILE_NAME = "(^/.+/)*(.+)$"

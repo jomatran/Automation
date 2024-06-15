@@ -3,11 +3,10 @@ Common functions that will use to another module
 """
 
 from os import listdir
-from os.path import splitext, join, isfile, exists
+from os.path import splitext, join, isfile
 from re import match
-from pathlib import Path
 import logging
-from src.utils.constant import IGNORE_FILE, FILE_NAME, DESTINATION
+from src.utils.constant import IGNORE_FILE, FILE_NAME
 
 
 def is_expect_type(file_name: str, regex: str) -> bool:

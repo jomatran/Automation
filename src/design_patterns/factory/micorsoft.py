@@ -17,10 +17,14 @@ class Microsoft(ICategory):
     """
 
     def get_path(self, source_file: str) -> str:
-        result_path = MS_PATH
+        result_path = ""
         file_name = get_file_name_from_path(source_file=source_file)
         if self.__is_catchup_file(file_name=file_name):
             result_path = MS_PATH + "/" + "catchup"
+        else:
+            result_path = (
+                MS_PATH + "/" + self.__seperate_folder_by_extension(file_name=file_name)
+            )
         return result_path
 
     def modified_file_name(self, source_file: str) -> str:
@@ -46,3 +50,14 @@ class Microsoft(ICategory):
         if file_name:
             result = file_name.lower().startswith("catchup")
         return result
+
+    def __seperate_folder_by_extension(self, file_name: str) -> str:
+        folder = {
+            ".xlsx": "excel",
+            ".docx": "docs",
+            ".txt": "txt",
+            ".doc": "docs",
+            ".pptx": "pptx",
+        }
+        file_name_prefix, file_ext = splitext(file_name)
+        return folder.get(file_ext, "")

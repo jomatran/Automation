@@ -3,7 +3,7 @@ A class that gonna return the path and file name for image.
 That will be seperated by date
 """
 
-from os.path import exists, getctime
+from os.path import getctime
 from datetime import datetime
 from src.design_patterns.factory.category import ICategory
 from src.utils.common_functions import get_file_name_from_path
