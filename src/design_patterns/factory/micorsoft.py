@@ -2,13 +2,12 @@
 A class that gonna return the path and file name for microsoft files
 """
 
-from os.path import splitext
-from os.path import getctime
 from datetime import datetime
+from os.path import getctime, splitext
+
 from src.design_patterns.factory.category import ICategory
-from src.utils.constant import MS_PATH
 from src.utils.common_functions import get_file_name_from_path
-from src.utils.constant import DATE_FORMAT
+from src.utils.constant import DATE_FORMAT, MS_PATH
 
 
 class Microsoft(ICategory):

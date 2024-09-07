@@ -3,11 +3,12 @@ A class that gonna return the path and file name for image.
 That will be seperated by date
 """
 
-from os.path import getctime
 from datetime import datetime
+from os.path import getctime
+
 from src.design_patterns.factory.category import ICategory
 from src.utils.common_functions import get_file_name_from_path
-from src.utils.constant import IMAGE_PATH, DATE_FORMAT
+from src.utils.constant import DATE_FORMAT, IMAGE_PATH
 
 
 class Image(ICategory):

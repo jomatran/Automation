@@ -3,9 +3,10 @@ A class that gonna return the path and file name for code files. Such as java, p
 """
 
 from os.path import splitext
+
 from src.design_patterns.factory.category import ICategory
-from src.utils.constant import CODE_PATH
 from src.utils.common_functions import get_file_name_from_path
+from src.utils.constant import CODE_PATH
 
 
 class Code(ICategory):

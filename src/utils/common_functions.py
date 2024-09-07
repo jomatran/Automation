@@ -2,11 +2,12 @@
 Common functions that will use to another module
 """
 
-from os import listdir
-from os.path import splitext, join, isfile
-from re import match
 import logging
-from src.utils.constant import IGNORE_FILE, FILE_NAME
+from os import listdir
+from os.path import isfile, join, splitext
+from re import match
+
+from src.utils.constant import FILE_NAME, IGNORE_FILE
 
 
 def is_expect_type(file_name: str, regex: str) -> bool:

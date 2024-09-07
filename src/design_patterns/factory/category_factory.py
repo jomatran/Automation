@@ -1,21 +1,23 @@
 """
-A factory class that will return a specific class which will corresponding with file extension
+A factory class that will return a specific class
+which will corresponding with file extension
 """
 
 import logging
+
 from src.design_patterns.factory.category import ICategory
 from src.design_patterns.factory.code import Code
-from src.design_patterns.factory.micorsoft import Microsoft
 from src.design_patterns.factory.image import Image
+from src.design_patterns.factory.micorsoft import Microsoft
 from src.design_patterns.factory.other import DefaultHandler
-from src.utils.common_functions import is_expect_type, get_file_name_from_path
+from src.utils.common_functions import get_file_name_from_path, is_expect_type
 from src.utils.constant import (
     IMAGE_EXTENSIONS,
-    YAML_EXTENSIONS,
+    JSON_EXTENSIONS,
+    MS_EXTENSION,
     PY_EXTENSIONS,
     SH_EXTENSIONS,
-    MS_EXTENSION,
-    JSON_EXTENSIONS,
+    YAML_EXTENSIONS,
 )
 
 
